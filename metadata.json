@@ -1,0 +1,6 @@
+{
+  "name": "Secure Smart Hospital Network",
+  "description": "Intelligent network management and Cisco-based security simulation platform featuring 6 departmental VLANs, Router-on-a-Stick, dynamic DHCP pools, stateful ACL firewall filtering, live packet simulation, and Cisco CLI terminal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

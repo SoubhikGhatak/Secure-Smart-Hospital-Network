@@ -1,0 +1,1045 @@
+# MASTER GOLDEN PROMPT
+
+## Project: Secure Smart Hospital Network — Intelligent Network Management & Simulation System
+
+Act as a senior full-stack software engineer, network architect, cybersecurity specialist, UI/UX designer, and system simulation developer.
+
+Build a complete, professional, highly interactive, visually sophisticated web application titled:
+
+# SECURE SMART HOSPITAL NETWORK
+
+### Intelligent Network Management & Security Simulation Platform
+
+The application is based on the academic project **"Design and Simulation of a Secure Smart Hospital Network"**, implemented conceptually using Cisco networking principles.
+
+Your task is to transform the network architecture into a functional, interactive, browser-based network simulation and management dashboard.
+
+IMPORTANT: This must be a working interactive application, not merely a static dashboard, landing page, presentation, or collection of decorative cards.
+
+Every major feature must have meaningful functionality. Buttons, controls, network devices, configuration panels, simulation controls, tables, and monitoring components must work.
+
+The application should demonstrate how a secure hospital network is designed, configured, monitored, and protected.
+
+---
+
+# 1. TECHNOLOGY STACK
+
+Build the application using:
+
+* React.js for the frontend.
+* TypeScript for structured application logic.
+* Modern CSS and responsive UI components.
+* SVG or Canvas for interactive network topology visualization.
+* Lucide icons for professional interface icons.
+* Local state management for network simulation.
+* Local storage for preserving user configurations and simulation settings.
+* Modular and reusable components.
+
+Use a clean and maintainable application architecture.
+
+Do not depend on paid APIs or external services for core functionality.
+
+The application must work independently in the browser.
+
+If backend functionality is unavailable, implement a realistic client-side simulation engine that accurately models the network's logical behavior.
+
+Do not claim that the application is directly connected to Cisco Packet Tracer or physical Cisco devices.
+
+---
+
+# 2. APPLICATION DESIGN AND VISUAL IDENTITY
+
+Create a premium cybersecurity and healthcare technology interface.
+
+### Design Direction
+
+* Dark navy and deep charcoal background.
+* Cyan and electric blue accent colors.
+* White and light-grey typography.
+* Subtle glassmorphism.
+* Professional network visualization.
+* Smooth transitions and micro-animations.
+* Clean dashboard cards.
+* Modern technical typography.
+* Carefully spaced layouts.
+* Consistent iconography.
+
+The application should resemble a professional enterprise network operations center (NOC) combined with a cybersecurity monitoring dashboard.
+
+### Main Layout
+
+Create a persistent left sidebar containing:
+
+1. Overview Dashboard
+2. Network Topology
+3. VLAN Management
+4. IP Address Management
+5. DHCP Management
+6. Routing Management
+7. Server Infrastructure
+8. Security & ACL
+9. Network Traffic Monitor
+10. Connectivity Testing
+11. Network Configuration
+12. System Logs
+13. Documentation
+
+The main content area should change according to the selected navigation item.
+
+Include:
+
+* Top navigation bar.
+* Application logo and name.
+* Network status indicator.
+* Current date and time.
+* Notification icon.
+* User profile placeholder.
+* Responsive sidebar for smaller screens.
+
+---
+
+# 3. NETWORK ARCHITECTURE — CORE SYSTEM
+
+Implement the following hospital network architecture exactly.
+
+The hospital network contains six logically separated VLANs.
+
+### VLAN Configuration
+
+| VLAN ID | Department        | Network         | Default Gateway |
+| ------- | ----------------- | --------------- | --------------- |
+| 10      | Administration    | 192.168.10.0/24 | 192.168.10.1    |
+| 20      | Reception         | 192.168.20.0/24 | 192.168.20.1    |
+| 30      | Medical / Doctors | 192.168.30.0/24 | 192.168.30.1    |
+| 40      | Laboratory        | 192.168.40.0/24 | 192.168.40.1    |
+| 50      | Guest             | 192.168.50.0/24 | 192.168.50.1    |
+| 60      | Hospital Servers  | 192.168.60.0/24 | 192.168.60.1    |
+
+Each VLAN must have:
+
+* Unique network address.
+* Unique subnet.
+* Dedicated default gateway.
+* Department label.
+* Connected device list.
+* Assigned IP addresses.
+* Communication status.
+
+### Network Devices
+
+Create the following devices:
+
+**Router**
+
+* Name: HOSPITAL-R1
+* Model representation: Cisco 2911
+* Role: Inter-VLAN routing.
+* Interface: GigabitEthernet 0/0.
+* Configuration: Router-on-a-Stick.
+
+**Switch**
+
+* Name: HOSPITAL-SW1
+* Model representation: Cisco 2960.
+* Role: VLAN creation, access-port assignment and trunk management.
+* Router-facing interface: GigabitEthernet 0/1.
+
+**End Devices**
+
+* Administration PCs.
+* Reception PCs.
+* Medical / Doctors PCs.
+* Laboratory PCs.
+* Guest PCs.
+
+**Servers**
+
+* Hospital Application Server.
+* DNS Server.
+* Backup Server.
+
+Use a topology with logical connections between the router, switch, departmental devices, and servers.
+
+---
+
+# 4. OVERVIEW DASHBOARD
+
+Create a professional dashboard that displays the overall network condition.
+
+### Dashboard Statistics
+
+Display dynamic cards for:
+
+* Total Network Devices.
+* Active Devices.
+* Total VLANs.
+* Connected Clients.
+* DHCP Leases.
+* Server Availability.
+* Blocked Connections.
+* Network Security Status.
+
+All values should update based on the simulation state.
+
+### Network Health
+
+Display:
+
+* Overall network health percentage.
+* Router status.
+* Switch status.
+* Server status.
+* VLAN availability.
+* Network connectivity.
+
+### Activity Overview
+
+Include:
+
+* Recent network events.
+* Recent DHCP assignments.
+* Blocked guest access attempts.
+* Server requests.
+* Connectivity test results.
+
+### Traffic Statistics
+
+Create visual charts displaying:
+
+* Simulated incoming traffic.
+* Simulated outgoing traffic.
+* Traffic by VLAN.
+* Allowed versus blocked connections.
+* Recent network activity.
+
+Use realistic illustrative simulation data and clearly identify it as simulated.
+
+---
+
+# 5. INTERACTIVE NETWORK TOPOLOGY
+
+This is one of the most important modules.
+
+Create a large interactive network topology canvas.
+
+Display:
+
+HOSPITAL-R1
+↓
+HOSPITAL-SW1
+↓
+Six departmental VLAN networks.
+
+Show all six VLAN groups with their respective client devices.
+
+Show the three hospital servers inside VLAN 60.
+
+### Interactive Features
+
+* Every device must be clickable.
+* Clicking a device should open its information panel.
+* Display device name, device type, IP address, MAC address, VLAN, status and connected interface.
+* Display connection lines between devices.
+* Differentiate router-to-switch trunk connections from access connections.
+* Use different visual identifiers for different VLANs.
+* Display active/inactive device states.
+* Highlight network paths during connectivity tests.
+* Animate simulated traffic travelling across the topology.
+* Display a connection status indicator.
+* Allow users to zoom and pan around the topology.
+* Include a reset-view option.
+
+### Traffic Animation
+
+When a user initiates a connectivity test, visually animate a packet travelling from the source device through the switch and router toward the destination.
+
+Show:
+
+* Source IP.
+* Destination IP.
+* Source VLAN.
+* Destination VLAN.
+* Protocol.
+* Routing decision.
+* ACL decision.
+* Final packet status.
+
+If blocked, show a red visual indicator and explain the reason.
+
+If permitted, show a green indicator and successful delivery.
+
+---
+
+# 6. VLAN MANAGEMENT MODULE
+
+Create a dedicated VLAN management interface.
+
+Display all six VLANs in a professional table.
+
+Include:
+
+* VLAN ID.
+* VLAN Name.
+* Subnet.
+* Default Gateway.
+* Number of connected clients.
+* VLAN status.
+* Security classification.
+
+### Functional Features
+
+* View VLAN details.
+* Add a simulated VLAN.
+* Edit VLAN information.
+* Remove a simulated VLAN after confirmation.
+* Assign devices to VLANs.
+* Move a device from one VLAN to another.
+* Display the resulting network configuration.
+* Show connected devices for each VLAN.
+
+Include a VLAN distribution visualization.
+
+The original six VLANs must be preconfigured.
+
+Any additional user-created VLAN must be clearly identified as a custom configuration and must not silently replace the original project architecture.
+
+---
+
+# 7. IP ADDRESS MANAGEMENT MODULE
+
+Create an IP Address Management (IPAM) interface.
+
+Display the IP address allocation for every device.
+
+Include:
+
+* Device name.
+* IP address.
+* Subnet mask.
+* Default gateway.
+* VLAN ID.
+* Address assignment type.
+* Device status.
+
+### Functional Features
+
+* Display available and assigned IP addresses.
+* Show subnet information.
+* Show gateway information.
+* Display DHCP-assigned addresses.
+* Display static server addresses.
+* Detect duplicate IP address assignments.
+* Warn about invalid IP addresses.
+* Allow manual IP assignment in the simulation.
+* Display an IP allocation summary.
+
+Use the following server IP configuration:
+
+| Server       | IP Address    | VLAN |
+| ------------ | ------------- | ---- |
+| HOSPITAL-SRV | 192.168.60.10 | 60   |
+| DNS-SRV      | 192.168.60.11 | 60   |
+| BACKUP-SRV   | 192.168.60.12 | 60   |
+
+Subnet mask for all original VLANs:
+
+255.255.255.0
+
+---
+
+# 8. DHCP MANAGEMENT MODULE
+
+Implement a working DHCP simulation engine.
+
+Create separate DHCP pools:
+
+* ADMIN
+* RECEPTION
+* MEDICAL
+* LAB
+* GUEST
+
+Each pool must correspond to its respective VLAN.
+
+### DHCP Functionalities
+
+* Automatically assign available IP addresses.
+* Assign the correct subnet mask.
+* Assign the correct default gateway.
+* Support simulated DHCP lease management.
+* Display currently assigned addresses.
+* Display available addresses.
+* Display lease status.
+* Display lease duration.
+* Renew a lease.
+* Release an assigned address.
+* Prevent duplicate IP allocation.
+* Exclude gateway and reserved server addresses from dynamic allocation.
+
+### DHCP Demonstration
+
+Provide a button:
+
+**REQUEST DHCP ADDRESS**
+
+When clicked:
+
+1. Select a client device.
+2. Identify its VLAN.
+3. Find the appropriate DHCP pool.
+4. Allocate an available IP address.
+5. Assign the correct gateway and subnet mask.
+6. Update the DHCP lease table.
+7. Generate a network activity log.
+
+Also provide a simulated DHCP binding table similar to Cisco IOS output.
+
+---
+
+# 9. INTER-VLAN ROUTING MODULE
+
+Implement the logical behavior of Router-on-a-Stick.
+
+The router must contain six subinterfaces:
+
+| Interface | VLAN | Gateway      |
+| --------- | ---- | ------------ |
+| G0/0.10   | 10   | 192.168.10.1 |
+| G0/0.20   | 20   | 192.168.20.1 |
+| G0/0.30   | 30   | 192.168.30.1 |
+| G0/0.40   | 40   | 192.168.40.1 |
+| G0/0.50   | 50   | 192.168.50.1 |
+| G0/0.60   | 60   | 192.168.60.1 |
+
+Use 802.1Q encapsulation for each subinterface.
+
+### Routing Functionalities
+
+* Display router interfaces.
+* Display subinterface status.
+* Display VLAN-to-gateway mapping.
+* Display directly connected networks.
+* Show routing decisions.
+* Show packet forwarding between VLANs.
+* Display routing table.
+* Show failed routing attempts.
+
+### Routing Demonstration
+
+Create an interactive feature:
+
+**SIMULATE INTER-VLAN COMMUNICATION**
+
+Allow the user to select:
+
+* Source device.
+* Destination device.
+
+Then demonstrate:
+
+1. Source device generates a packet.
+2. Packet reaches the access switch.
+3. Switch forwards the packet through the trunk.
+4. Router receives the packet.
+5. Router identifies the destination network.
+6. Router evaluates the configured security policy.
+7. Packet is forwarded toward the destination VLAN.
+8. Destination receives the packet if permitted.
+
+Display each step in an animated sequence.
+
+---
+
+# 10. HOSPITAL SERVER INFRASTRUCTURE
+
+Create a dedicated server management interface for VLAN 60.
+
+### Server 1: HOSPITAL-SRV
+
+IP: 192.168.60.10
+
+Purpose:
+
+* Hospital application service.
+* Simulated patient management interface.
+* Departmental service access.
+* Hospital information dashboard.
+
+Create a small demonstration hospital application page with:
+
+* Patient registration placeholder.
+* Patient records placeholder.
+* Appointment management.
+* Department information.
+* Hospital service status.
+
+Use fictional demonstration data only.
+
+Do not create real patient information or claim to store actual medical records.
+
+### Server 2: DNS-SRV
+
+IP: 192.168.60.11
+
+Purpose:
+
+* Domain name resolution.
+* Simulated DNS record management.
+
+Example:
+hospital.local → 192.168.60.10
+
+Provide:
+
+* DNS record table.
+* Add and remove record controls.
+* Name resolution testing.
+* DNS service status.
+
+### Server 3: BACKUP-SRV
+
+IP: 192.168.60.12
+
+Purpose:
+
+* Simulated backup infrastructure.
+* Backup status monitoring.
+* Backup event history.
+
+Display:
+
+* Server availability.
+* Last simulated backup.
+* Backup status.
+* Storage usage visualization.
+
+All server services should be demonstrable within the browser.
+
+---
+
+# 11. NETWORK SECURITY AND ACL MANAGEMENT
+
+This is a critical part of the application.
+
+Implement a functional Extended Access Control List simulation.
+
+ACL Name:
+
+GUEST_ISOLATION
+
+Guest Network:
+
+192.168.50.0/24
+
+### Security Policy
+
+The Guest VLAN must be denied access to:
+
+* Administration: 192.168.10.0/24
+* Reception: 192.168.20.0/24
+* Medical: 192.168.30.0/24
+* Laboratory: 192.168.40.0/24
+* Hospital Servers: 192.168.60.0/24
+
+Guest traffic not matching these internal deny rules may be permitted according to the configured ACL policy.
+
+The internal hospital departments should be allowed to communicate with required internal services, subject to the simulation's configured policy.
+
+### ACL Functionalities
+
+* Display ACL name.
+* Display access-control rules.
+* Display permit and deny actions.
+* Display source and destination networks.
+* Display rule priority.
+* Display ACL hit counters.
+* Show blocked traffic.
+* Show permitted traffic.
+* Enable or disable the simulated ACL.
+* Add a new ACL rule.
+* Edit an ACL rule.
+* Remove a rule after confirmation.
+
+### Live ACL Demonstration
+
+Create a feature called:
+
+**TEST SECURITY POLICY**
+
+Allow the user to select:
+
+* Source device.
+* Destination device.
+
+Then evaluate the traffic against the ACL rules.
+
+Example:
+
+Guest PC → Hospital Server
+
+Expected result:
+BLOCKED
+
+Reason:
+Guest network is denied access to the Hospital Server VLAN.
+
+Administration PC → Hospital Server
+
+Expected result:
+ALLOWED
+
+Reason:
+No matching guest-isolation deny rule applies to this source.
+
+Update ACL hit counters and generate a security event after every test.
+
+IMPORTANT:
+Implement ACL evaluation using actual source and destination IP ranges and rule ordering. Do not simply display hardcoded PASS or BLOCKED results.
+
+---
+
+# 12. NETWORK TRAFFIC MONITORING
+
+Create a live-style Network Traffic Monitoring interface.
+
+Display simulated network activity across all VLANs.
+
+### Monitoring Features
+
+* Traffic by department.
+* Source and destination IP addresses.
+* Protocol identification.
+* Packet count.
+* Traffic direction.
+* Timestamp.
+* Allowed or blocked status.
+
+### Protocol Categories
+
+Include representative traffic for:
+
+* TCP.
+* UDP.
+* ICMP.
+* DNS.
+* HTTP.
+* HTTPS.
+
+### Visualizations
+
+Create:
+
+* Traffic volume chart.
+* VLAN-wise traffic chart.
+* Allowed versus blocked traffic chart.
+* Protocol distribution chart.
+* Recent connection table.
+
+Add a button:
+
+**GENERATE SIMULATED NETWORK TRAFFIC**
+
+When activated, generate realistic sample traffic events and update the charts and event table.
+
+Make it clear that this is simulated application data, not captured traffic from a physical network.
+
+---
+
+# 13. CONNECTIVITY TESTING MODULE
+
+Create a dedicated testing interface.
+
+It should resemble a professional network diagnostic utility.
+
+### Testing Tools
+
+**1. PING**
+
+Allow the user to choose a source device and destination IP/device.
+
+Display:
+
+* Packet transmitted.
+* Packet received.
+* Packet loss.
+* Simulated response time.
+* Success or failure.
+
+**2. TRACEROUTE**
+
+Display the logical path:
+
+Source PC → Switch → Router → Destination VLAN → Destination Device
+
+**3. DNS LOOKUP**
+
+Allow domain name testing against the simulated DNS records.
+
+**4. DHCP TEST**
+
+Verify whether a client can obtain an IP address from its VLAN pool.
+
+**5. ROUTING TEST**
+
+Check whether the router has a route to the destination network.
+
+**6. ACL TEST**
+
+Check whether the selected traffic is permitted or denied.
+
+### Preconfigured Test Scenarios
+
+| Source            | Destination       | Expected Result |
+| ----------------- | ----------------- | --------------- |
+| Administration PC | Hospital Server   | ALLOWED         |
+| Reception PC      | Hospital Server   | ALLOWED         |
+| Medical PC        | Hospital Server   | ALLOWED         |
+| Laboratory PC     | Hospital Server   | ALLOWED         |
+| Guest PC          | Hospital Server   | BLOCKED         |
+| Guest PC          | Administration PC | BLOCKED         |
+| Guest PC          | Medical PC        | BLOCKED         |
+
+Results must be generated from the actual simulation logic and active ACL configuration.
+
+Do not display successful results when the simulation conditions indicate failure.
+
+---
+
+# 14. NETWORK CONFIGURATION AND CISCO CLI SIMULATOR
+
+Create a terminal-style configuration interface.
+
+It should visually resemble a Cisco IOS command-line interface.
+
+Provide simulated command execution for relevant commands:
+
+show vlan brief
+
+show interfaces trunk
+
+show ip interface brief
+
+show ip route
+
+show ip dhcp binding
+
+show access-lists
+
+show running-config
+
+### Terminal Features
+
+* Dark terminal interface.
+* Command input field.
+* Execute button.
+* Command history.
+* Clear terminal button.
+* Syntax highlighting where appropriate.
+* Scrollable output.
+* Error messages for unsupported commands.
+
+The terminal must generate output based on the application's current simulated network state.
+
+For example:
+
+When the user executes:
+
+show vlan brief
+
+Display the currently configured VLANs and their assigned switch ports.
+
+When the user executes:
+
+show ip route
+
+Display the simulated routing table.
+
+When the user executes:
+
+show access-lists
+
+Display the active ACL rules and their current hit counters.
+
+Do not return generic fixed output unrelated to the current configuration.
+
+Also include a configuration reference panel with representative Cisco IOS commands for:
+
+* VLAN creation.
+* Access-port configuration.
+* Trunk configuration.
+* Router subinterfaces.
+* DHCP pools.
+* ACL configuration.
+
+Clearly distinguish reference commands from commands actually executed by the browser simulation.
+
+---
+
+# 15. SYSTEM LOGS AND SECURITY EVENTS
+
+Create a centralized event logging module.
+
+Record important simulation activities.
+
+### Event Categories
+
+* DHCP assignment.
+* VLAN modification.
+* Device connection.
+* Device disconnection.
+* Inter-VLAN communication.
+* Successful ping.
+* Failed ping.
+* ACL permit.
+* ACL deny.
+* DNS lookup.
+* Server availability changes.
+* Configuration changes.
+
+### Log Fields
+
+* Event ID.
+* Timestamp.
+* Event category.
+* Source device.
+* Destination device.
+* IP address.
+* Description.
+* Severity.
+
+Use severity classifications:
+
+INFO
+WARNING
+CRITICAL
+
+### Features
+
+* Search logs.
+* Filter by event category.
+* Filter by severity.
+* Clear logs with confirmation.
+* Export logs as CSV.
+
+Generate logs automatically whenever a corresponding action takes place.
+
+---
+
+# 16. DOCUMENTATION MODULE
+
+Create an integrated project documentation page.
+
+Include:
+
+* Project overview.
+* Problem statement.
+* Objectives.
+* Network requirements.
+* Network architecture.
+* VLAN configuration.
+* IP addressing scheme.
+* Routing architecture.
+* Server infrastructure.
+* Security policy.
+* Implementation workflow.
+* Testing methodology.
+* Results and conclusion.
+
+Provide a professional VLAN table and server IP table.
+
+Include a downloadable project summary if feasible.
+
+---
+
+# 17. GLOBAL SIMULATION ENGINE
+
+All modules must work together through one shared network simulation state.
+
+This is extremely important.
+
+Do not build disconnected pages with independent hardcoded data.
+
+Create a centralized network state containing:
+
+* Devices.
+* VLANs.
+* IP addresses.
+* DHCP pools.
+* DHCP leases.
+* Router interfaces.
+* Routing table.
+* ACL rules.
+* ACL hit counters.
+* Server services.
+* Network traffic events.
+* Connectivity test results.
+* System logs.
+
+### Simulation Rules
+
+1. A device must belong to a valid VLAN.
+2. A device must have a valid IP address to participate in connectivity tests.
+3. A DHCP client must receive an address from its assigned VLAN pool.
+4. Each VLAN must use its configured default gateway.
+5. Inter-VLAN communication must pass through the router simulation.
+6. The routing engine must identify the destination network.
+7. The ACL engine must evaluate applicable rules in order.
+8. Blocked traffic must not reach the destination.
+9. Permitted traffic must be delivered if all required network conditions are satisfied.
+10. DNS requests must be evaluated against the configured DNS records.
+11. Server services must be enabled for the corresponding service test to succeed.
+12. Configuration changes must update the relevant modules.
+13. Every significant action must generate a corresponding system log.
+14. Resetting the simulation must restore the original project configuration.
+
+The application should provide a **RESET TO DEFAULT HOSPITAL NETWORK** option.
+
+This should restore the original six VLANs, router configuration, DHCP pools, servers, ACL and initial devices.
+
+---
+
+# 18. DEMONSTRATION MODE
+
+Create a special feature called:
+
+# PROJECT DEMONSTRATION MODE
+
+This feature is intended for university project evaluation.
+
+Provide a guided sequence of demonstrations:
+
+**DEMO 1 — NETWORK ARCHITECTURE**
+Display the complete hospital topology.
+
+**DEMO 2 — VLAN SEGMENTATION**
+Show the six departmental VLANs and their network separation.
+
+**DEMO 3 — DHCP ASSIGNMENT**
+Select a client and demonstrate automatic IP allocation.
+
+**DEMO 4 — INTER-VLAN ROUTING**
+Demonstrate authorized communication between two internal departments.
+
+**DEMO 5 — HOSPITAL SERVER ACCESS**
+Open the hospital application through an internal client.
+
+**DEMO 6 — GUEST SECURITY**
+Attempt Guest-to-Server communication and demonstrate ACL blocking.
+
+**DEMO 7 — NETWORK MONITORING**
+Generate simulated traffic and show network events.
+
+**DEMO 8 — CONNECTIVITY VERIFICATION**
+Run ping, traceroute, DNS and ACL tests.
+
+**DEMO 9 — CISCO CLI**
+Execute network verification commands.
+
+Each demonstration should have:
+
+* A short explanation.
+* An interactive action.
+* A visible result.
+* A clear success/failure indication.
+
+Include Next and Previous controls so the user can present the project step by step.
+
+---
+
+# 19. FUNCTIONALITY AND QUALITY REQUIREMENTS
+
+Follow these requirements strictly:
+
+* Build all major pages and navigation.
+* Ensure every button has a meaningful action.
+* Ensure forms validate user input.
+* Ensure tables update dynamically.
+* Ensure charts reflect actual simulation data.
+* Ensure device status is consistent across pages.
+* Ensure DHCP, routing, ACL and connectivity tests share the same configuration.
+* Ensure the application is responsive.
+* Ensure the application can be demonstrated on a desktop or laptop.
+* Include helpful empty states and error messages.
+* Include confirmation before destructive actions.
+* Avoid unnecessary animations that reduce usability.
+* Use realistic default data.
+* Do not leave unfinished placeholders.
+* Do not create nonfunctional decorative controls.
+
+If any feature cannot be implemented completely, provide a working simplified simulation and clearly identify its limitations.
+
+---
+
+# 20. INITIAL DEFAULT CONFIGURATION
+
+When the application first launches, it must already contain a complete preconfigured demonstration network.
+
+Initialize:
+
+* One Cisco 2911 router.
+* One Cisco 2960 switch.
+* Six VLANs.
+* Departmental client devices.
+* Three hospital servers.
+* Six router subinterfaces.
+* Five DHCP pools.
+* One guest isolation ACL.
+* DNS records.
+* Hospital application service.
+* Backup service.
+* Initial routing table.
+* Initial event logs.
+
+Use the following switch port assignment:
+
+| Switch Ports | VLAN  | Department        |
+| ------------ | ----- | ----------------- |
+| Fa0/1–2      | 10    | Administration    |
+| Fa0/3–4      | 20    | Reception         |
+| Fa0/5–7      | 30    | Medical           |
+| Fa0/8–9      | 40    | Laboratory        |
+| Fa0/10–11    | 50    | Guest             |
+| Fa0/12–14    | 60    | Hospital Servers  |
+| G0/1         | Trunk | Router Connection |
+
+Router-facing trunk should allow VLANs 10, 20, 30, 40, 50 and 60.
+
+Configure the six router subinterfaces with the respective gateway addresses.
+
+Use the following ACL logic:
+
+* Deny Guest network access to Administration.
+* Deny Guest network access to Reception.
+* Deny Guest network access to Medical.
+* Deny Guest network access to Laboratory.
+* Deny Guest network access to Hospital Servers.
+* Permit remaining Guest traffic according to the configured policy.
+
+Apply the ACL inbound on the Guest router subinterface.
+
+Do not invent an external internet connection. If external connectivity is not configured, label external access as simulated or unavailable.
+
+---
+
+# 21. FINAL DELIVERY EXPECTATION
+
+Deliver a complete, polished and working application.
+
+The finished product should feel like a real network management and cybersecurity simulation platform.
+
+A university evaluator should be able to open the application and understand:
+
+1. How the hospital network is structured.
+2. How departmental VLANs isolate network segments.
+3. How IP addressing and DHCP operate.
+4. How Router-on-a-Stick enables inter-VLAN communication.
+5. How hospital servers provide centralized services.
+6. How ACLs prevent unauthorized Guest access.
+7. How network traffic is monitored.
+8. How connectivity is tested.
+9. How Cisco-style commands verify network configuration.
+10. How all these components work together.
+
+Prioritize functional completeness, technical correctness, visual quality and a smooth demonstration experience.
+
+Build the application now. Do not merely explain how to build it. Generate the actual working project with all the components, interactions, simulation logic and professional interface described above.
